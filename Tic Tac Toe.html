@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+    <style>
+        div {
+            background-color: rgb(231, 203, 110);
+            width: 200px;
+            height: 150px;
+            padding: 200px rgb(146, 150, 91);
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2>tic tac toe</h2>
+        <hr color="red">
+        <div><table>
+            <tr>
+                <th><input type="button" value="" onclick="game(11)" id="11"></th>
+                <th><input type="button" value="" onclick="game(12)" id="12"></th>
+                <th><input type="button" value="" onclick="game(13)" id="13"></th>
+
+            </tr>
+            <tr>
+                <th><input type="button" value="" onclick="game(21)" id="21"></th>
+                <th><input type="button" value="" onclick="game(22)" id="22"></th>
+                <th><input type="button" value="" onclick="game(23)" id="23"></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="" onclick="game(31)" id="31"></th>
+                <th><input type="button" value="" onclick="game(32)" id="32"></th>
+                <th><input type="button" value="" onclick="game(33)" id="33"></th>
+            </tr>
+            <h3><input type="button" value="player x's turn" id="player"></h3>
+        </table>
+    </center></div>
+    <script>
+        function game(val) {
+            if (document.getElementById("player").value == "player x's turn" && document.getElementById(val).value == "") {
+                document.getElementById(val).value = "x";
+                document.getElementById("player").value = "player o's turn";
+                check("x");
+                
+
+            }
+            else if (document.getElementById("player").value == "player o's turn" && document.getElementById(val).value == "") {
+                document.getElementById(val).value = "o";
+                document.getElementById("player").value = "player x's turn";
+                
+                check("o");
+            }
+
+
+        }
+        function check(tic) {
+            let flag=0;
+            if (document.getElementById("11").value == tic & document.getElementById("12").value == tic & document.getElementById("13").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("21").value == tic & document.getElementById("22").value == tic & document.getElementById("23").value == tic) {
+                alert("player " + tic +" won the game" + "&#x1F61F");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("31").value == tic & document.getElementById("32").value == tic & document.getElementById("33").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("11").value == tic & document.getElementById("21").value == tic & document.getElementById("31").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("12").value == tic & document.getElementById("22").value == tic & document.getElementById("32").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }else if (document.getElementById("13").value == tic & document.getElementById("23").value == tic & document.getElementById("33").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("11").value == tic & document.getElementById("22").value == tic & document.getElementById("33").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            else if (document.getElementById("13").value == tic & document.getElementById("22").value == tic & document.getElementById("31").value == tic) {
+                alert("player " + tic +" won the game");
+                flag=1;
+                fin();
+            }
+            if(document.getElementById("11").value != "" & document.getElementById("12").value != "" & document.getElementById("13").value != "" & document.getElementById("21").value != "" & document.getElementById("22").value != "" & document.getElementById("23").value != "" & document.getElementById("31").value != "" & document.getElementById("32").value != "" & document.getElementById("33").value != "" & flag==0){
+                alert("DRAW match try again");
+                location.reload();
+            }
+            
+        }
+        function fin(){
+            location.reload();
+        }
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+    <style>
+        div {
+            background-color: rgb(91, 123, 150);
+            width: 200px;
+            height: 150px;
+            padding: 200px rgb(91, 123, 150);
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>calculator</h1>
+        <hr>
+        <form action="myform">
+        <div><br>
+            <input type="text" placeholder="Enter calculation" id="result">
+            <table>
+                <tr>
+                    <td><input type="button" value="1" onclick="valu('1')"></td>
+                    <td><input type="button" value="2" onclick="valu('2')"></td>
+                    <td><input type="button" value="3" onclick="valu('3')"></td>
+                    <td><input type="button" value="+" onclick="valu('+')"></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="button" value="4" onclick="valu('4')"></td>
+                    <td><input type="button" value="5" onclick="valu('5')"></td>
+                    <td><input type="button" value="6" onclick="valu('6')"></td>
+                    <td><input type="button" value="- " onclick="valu('-')"></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="button" value="7" onclick="valu('7')"></td>
+                    <td><input type="button" value="8" onclick="valu('8')"></td>
+                    <td><input type="button" value="9" onclick="valu('9')"></td>
+                    <td><input type="button" value="* " onclick="valu('*')"></td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="button" value="0" onclick="valu('0')"></td>
+                    <td><input type="button" value="/ " onclick="valu('/')"></td>
+                    <td><input type="button" value="=" onclick="dis()"></td>
+                    <td><input type="button" value="cl" onclick="clr()"></td>
+                    
+                </tr>
+            </table>
+        </div>
+    </form>
+
+
+    </center>
+    <script>
+        function valu(val){
+            document.getElementById("result").value+=val;
+
+        }
+        function dis(){
+            let n=document.getElementById("result").value;
+            let y=eval(n);
+            document.getElementById("result").value=y;
+        }
+        function clr(){
+            document.getElementById("result").value="";
+        }
+    </script>
+</body>
+
+</html>
